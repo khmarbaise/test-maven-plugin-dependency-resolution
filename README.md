@@ -1,5 +1,5 @@
-Test-Maven-Plugin(TMP)
-=====================
+Test-Maven-Plugin-Dependency-Resolution
+=======================================
 
 License
 -------
@@ -9,13 +9,10 @@ License
 Overview
 --------
 
-Test for LifeCycle participant
+Test for Dependency Resolution
 
-ATTENTION: Running the integration tests via
 
 ```
 mvn -Prun-its clean verify
 ```
-
-will run correctly with Maven 3.2.6 (!!!)....
 
