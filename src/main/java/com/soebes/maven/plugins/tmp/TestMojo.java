@@ -12,7 +12,6 @@ import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
-import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.plugins.annotations.ResolutionScope;
 import org.apache.maven.project.DefaultProjectBuildingRequest;
 import org.apache.maven.project.ProjectBuildingRequest;
@@ -30,26 +29,14 @@ public class TestMojo
     extends AbstractTestMojo
 {
 
-    @Parameter
-    private String conf;
-
-    // @Inject
-    // private LifeCycleParticipant deploy;
-
     public void execute()
         throws MojoExecutionException, MojoFailureException
     {
-        // // FIXME: Little trick to identify the correct instance..
-        // deploy.setMojo( this );
-
         if ( isSkip() )
         {
             getLog().info( " Skipping execution based on user request." );
             return;
         }
-
-        // getLog().info( "Participant: " + deploy );
-        // deploy.setConf( conf );
 
         List<Dependency> dependencies = getMavenProject().getDependencies();
         for ( Dependency dependency : dependencies )
